@@ -45,7 +45,7 @@ class PUE extends \tad_DI52_ServiceProvider {
 	 *
 	 * @var string
 	 */
-	private $update_url = 'http://tri.be/';
+	private $update_url = 'http://pue.theeventscalendar.com/';
 
 	/**
 	 * The PUE checker instance.

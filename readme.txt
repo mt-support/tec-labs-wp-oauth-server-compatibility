@@ -2,18 +2,18 @@
 Contributors: theeventscalendar
 Donate link: https://evnt.is/29
 Tags: events, calendar
-Requires at least: 4.9
-Tested up to: 5.7
-Requires PHP: 5.6
+Requires at least: 5.8
+Tested up to: 5.9
+Requires PHP: 7.2
 Stable tag: 1.0.0
 License: GPL version 3 or any later version
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-
-
 == Description ==
 
-This is the long description.  No limit, and you can use Markdown (as well as in the following sections).
+This extension allows The Events Calendar views to successfully navigate when WP OAuth Server is set to block all unauthenticated REST requests.
+
+The plugin works by identifying REST requests for The Events Calendar navigation and contextually filtering the WP OAuth Server settings such that the TEC REST endpoint authentication is not overridden.
 
 For backwards compatibility, if this section is missing, the full length of the short description will be used, and Markdown parsed.
 
@@ -37,6 +37,6 @@ We're always interested in your feedback and our [Help Desk](https://support.the
 
 == Changelog ==
 
-= [1.0.0] YYYY-MM-DD =
+= [1.0.0] 2022-03-11 =
 
 * Initial release

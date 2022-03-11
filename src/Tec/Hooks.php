@@ -41,17 +41,7 @@ class Hooks extends \tad_DI52_ServiceProvider {
 		$this->container->singleton( static::class, $this );
 		$this->container->singleton( 'extension.wp_oauth_server_compatibility.hooks', $this );
 
-		$this->add_actions();
 		$this->add_filters();
-	}
-
-	/**
-	 * Adds the actions required by the plugin.
-	 *
-	 * @since 1.0.0
-	 */
-	protected function add_actions() {
-		add_action( 'tribe_load_text_domains', [ $this, 'load_text_domains' ] );
 	}
 
 	/**
@@ -60,19 +50,29 @@ class Hooks extends \tad_DI52_ServiceProvider {
 	 * @since 1.0.0
 	 */
 	protected function add_filters() {
+		add_action( 'rest_authentication_errors', function( $result ) {
+			global $current_user;
 
-	}
+			if ( ! empty( $current_user->ID ) ) {
+				return $result;
+			}
 
-	/**
-	 * Load text domain for localization of the plugin.
-	 *
-	 * @since 1.0.0
-	 */
-	public function load_text_domains() {
-		$mopath = tribe( Plugin::class )->plugin_dir . 'lang/';
-		$domain = '__TRIBE_DOMAIN__';
+			$context = tribe_context();
 
-		// This will load `wp-content/languages/plugins` files first.
-		Common::instance()->load_text_domain( $domain, $mopath );
+			if ( ! $context->doing_rest() ) {
+				return $result;
+			}
+
+			if ( ! $view = $context->get( 'view' ) ) {
+				return $result;
+			}
+
+			add_filter( 'option_wo_options', function( $options ) {
+				$options['block_all_unauthenticated_rest_request'] = false;
+				return $options;
+			} );
+
+			return $result;
+		}, 1 );
 	}
 }

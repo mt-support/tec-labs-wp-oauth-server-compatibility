@@ -1,15 +1,14 @@
 <?php
 /**
- * Plugin Name:       The Events Calendar Extension: WP OAuth Server view navigation compatibility
+ * Plugin Name:       The Events Calendar Extension: WP OAuth Server compatibility
  * Plugin URI:        
  * GitHub Plugin URI: https://github.com/mt-support/tec-labs-wp-oauth-server-compatibility
- * Description:       
+ * Description:       Allows The Events Calendar navigation to function when WP OAuth Server is set to block all unauthenticated requests.
  * Version:           1.0.0
  * Author:            The Events Calendar
  * Author URI:        https://evnt.is/1971
  * License:           GPL version 3 or any later version
  * License URI:       https://www.gnu.org/licenses/gpl-3.0.html
- * Text Domain:       __TRIBE_DOMAIN__
  *
  *     This plugin is free software: you can redistribute it and/or modify
  *     it under the terms of the GNU General Public License as published by
