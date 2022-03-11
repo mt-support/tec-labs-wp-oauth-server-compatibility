@@ -1,4 +1,4 @@
-=== The Events Calendar Extension: WP OAuth Server view navigation compatibility ===
+=== The Events Calendar Extension: WP OAuth Server compatibility ===
 Contributors: theeventscalendar
 Donate link: https://evnt.is/29
 Tags: events, calendar
