@@ -4,7 +4,7 @@
  * Plugin URI:        
  * GitHub Plugin URI: https://github.com/mt-support/tec-labs-wp-oauth-server-compatibility
  * Description:       Allows The Events Calendar navigation to function when WP OAuth Server is set to block all unauthenticated requests.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            The Events Calendar
  * Author URI:        https://evnt.is/1971
  * License:           GPL version 3 or any later version
